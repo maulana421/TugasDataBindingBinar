@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="berita"
+            type="com.example.beritadatabinding.DataBerita" />
+
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/cardSatu"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="8dp"
+        app:strokeWidth="1dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="10dp"
+        android:elevation="40dp"
+        app:cardCornerRadius="15dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/imgBerita"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginBottom="8dp"
+                imageResource="@{berita.img}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/tvjudulBerita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins_font"
+                android:textColor="@color/black"
+                android:layout_marginStart="8dp"
+                android:maxLines="2"
+                android:text="@{berita.judul}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@+id/imgBerita"
+                app:layout_constraintTop_toTopOf="@+id/imgBerita" />
+
+
+
+            <TextView
+                android:id="@+id/tv_Tanggal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_font"
+                android:layout_marginStart="4dp"
+                android:maxLines="2"
+                android:layout_marginTop="2dp"
+                android:text="@{berita.tanggal}"
+
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintTop_toBottomOf="@+id/tvjudulBerita" />
+
+
+
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_Tanggal"
+                app:layout_constraintStart_toStartOf="@+id/tvjudulBerita"
+                app:layout_constraintTop_toTopOf="@+id/tv_Tanggal"
+                app:layout_constraintVertical_bias="0.0"
+                app:srcCompat="@drawable/calendar" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+</layout>

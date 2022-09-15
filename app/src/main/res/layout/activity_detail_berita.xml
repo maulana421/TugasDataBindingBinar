@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="detailBerita"
+            type="com.example.beritadatabinding.DataBerita" />
+
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/palet3"
+        android:layout_marginBottom="20dp"
+        tools:context=".DetailBeritaActivity">>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp">
+
+            <View
+                android:id="@+id/view"
+                android:layout_width="0dp"
+                android:layout_height="600dp"
+                android:background="@drawable/bg"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/avatar"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                imageResource="@{detailBerita.img}"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <TextView
+                android:id="@+id/tvjudulBerita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins_font"
+                android:gravity="center"
+                android:text="@{detailBerita.judul}"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.487"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/avatar" />
+
+            <TextView
+                android:id="@+id/tvtanggalBerita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="168dp"
+                android:layout_marginTop="36dp"
+                android:fontFamily="@font/poppins_font"
+                android:gravity="center"
+                android:text="@{detailBerita.tanggal}"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvjudulBerita" />
+
+            <TextView
+                android:id="@+id/tvjurnalisBerita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="164dp"
+                android:fontFamily="@font/poppins_font"
+                android:gravity="center"
+                android:text="@{detailBerita.jurnalis}"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvtanggalBerita" />
+
+            <TextView
+                android:id="@+id/tvdeskripsiBerita"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:textColor="@color/black"
+                android:fontFamily="@font/poppins_font"
+                android:layout_marginTop="76dp"
+                android:gravity="center"
+                android:text="@{detailBerita.deskripsi}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvjurnalisBerita" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </ScrollView>
+</layout>
